@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Inicio</title>
+
+
+<!-- dejo comentado el la dependencia de bootstrap que no funciona -->
+
+<!--  
+<link th:rel="stylesheet" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}">
+-->
+  
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+	
+<!--  estilos propios -->	
+
+<link rel="stylesheet" href="../static/css/estilos.css">
+
+</head>
+<body>
+
+	<!-- header -->
+	<header class="container-fluid">
+		<div class="row">
+			<div class="col-lg-8">
+				<div>
+					<img src="../static/images/fi-logo.png" alt="logo facultad">
+				</div>
+				<div>
+					<p>"Flammam tuam in hoc foco accende"</p>
+				</div>
+			</div>
+
+			<div
+				class="col-lg-4 d-flex justify-content-center align-items-center">
+				<p class="fs-2 fw-semibold">Universidad Nacional de Jujuy</p>
+			</div>
+		</div>
+	</header>
+
+	<!-- fin header -->
+
+	<!-- inicio navbar -->
+	<div class="container-fluid p-0 mb-3">
+
+
+		<nav class="navbar navbar-expand-lg bg-light">
+			<div class="container-fluid">
+				<a class="navbar-brand" href="#"> <img src="../static/images/logo-fi-unju-institucional-285x159.jpg" alt="Logo" class="imgLogo">
+				</a>
+				<button class="navbar-toggler" type="button"
+					data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+					aria-controls="navbarSupportedContent" aria-expanded="false"
+					aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarSupportedContent">
+					<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+						<li class="nav-item"><a class="nav-link active"
+							aria-current="page" href="#inicio">Inicio</a></li>
+						<li class="nav-item"><a class="nav-link" href="#carreras">Carreras</a>
+						</li>
+						<li class="nav-item"><a class="nav-link" href="#noticias">Noticias</a>
+						</li>
+						<li class="nav-item"><a class="nav-link" href="#formulario">Contacto</a>
+						</li>
+					</ul>
+					<form class="d-flex" role="search">
+						<input class="form-control me-2" type="search"
+							placeholder="Search" aria-label="Search">
+						<button class="btn btn-outline-primary" type="submit">Search</button>
+					</form>
+				</div>
+			</div>
+		</nav>
+
+
+
+
+
+	</div>
+	<!-- fin navbar -->
+
+	<!-- inicio slider-->
+
+	<div class="container-fluid py-3" id="inicio">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8" id="carreras">
+					<div id="carouselExampleControls" class="carousel slide"
+						data-bs-ride="carousel">
+						<div class="carousel-inner">
+							<div class="carousel-item active">
+								<img src="../static/images/ing-industrial-fi-unju.jpg"
+									class="d-block w-100" alt="Ingenieria Industrial" >
+							</div>
+							<div class="carousel-item">
+								<img src="../static/images/ing-informatica-fi-unju.jpg"
+									class="d-block w-100" alt="Ingenieria Informática" >
+							</div>
+							<div class="carousel-item">
+								<img src="../static/images/ing-minas-fi-unju.jpg"
+									class="d-block w-100" alt="Ingenieria en minas" >
+							</div>
+						</div>
+						<button class="carousel-control-prev" type="button"
+							data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+							<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+							<span class="visually-hidden">Previous</span>
+						</button>
+						<button class="carousel-control-next" type="button"
+							data-bs-target="#carouselExampleControls" data-bs-slide="next">
+							<span class="carousel-control-next-icon" aria-hidden="true"></span>
+							<span class="visually-hidden">Next</span>
+						</button>
+					</div>
+				</div>
+				<div class="col-lg-4">
+					<div
+						class="d-flex align-items-center justify-content-between bg-light py-2 px-4 mb-3">
+						<h3 class="m-0">Carreras</h3>
+					</div>
+					<div
+						class="d-flex position-relative overflow-hidden mb-3 color1 justify-content-center align-items-center heightBox80">
+						<p class="tituloBox fs-2 fw-semibold">Ingenierias</p>
+					</div>
+
+					<div
+						class="d-flex position-relative overflow-hidden mb-3 color2 justify-content-center align-items-center heightBox80">
+						<p class="tituloBox fs-2 fw-semibold">Licenciaturas</p>
+					</div>
+					<div
+						class="d-flex position-relative overflow-hidden mb-3 color3 justify-content-center align-items-center heightBox80">
+						<p class="tituloBox fs-2 fw-semibold">Tecnicaturas</p>
+					</div>
+					<div
+						class="d-flex position-relative overflow-hidden color4 justify-content-center align-items-center heightBox80">
+						<p class="tituloBox fs-2 fw-semibold">Postgrados</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- fin slider -->
+
+	<!--   main pricipal -->
+
+	<main class="container-fluid py-3">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8">
+					<div class="position-relative mb-3">
+						<img class="img-fluid w-100 objectFitCover" src="../static/images/portada-50aniosfiunju.jpg" alt="50 años de la facultad" >
+						<div class="overlay position-relative bg-light">
+							<div class="mb-3">
+								<a href="">Noticias</a> <span class="px-1">/</span> <span>24
+									de Mayo, 2022</span>
+							</div>
+							<div>
+								<h3 class="mb-3">50 AÑOS CONTRIBUYENDO AL CRECIMIENTO DE
+									JUJUY</h3>
+								<p>La Facultad de Ingeniería de la Universidad Nacional de
+									Jujuy celebró sus 50 años con un Acto Protocolar realizado el
+									martes 24 de mayo del corriente en horas de la mañana, en su
+									edificio principal de calle Ítalo Palanca Nº 10 de la ciudad de
+									San Salvador de Jujuy. El Acto de ceremonia fue presidido por
+									la Docente Lic. Soledad Benitez y tuvo como anfitriones a las
+									Autoridades de la Facultad de Ingeniería, Decano Ing. Luis
+									Alejandro Vargas, Vicedacana Ing. María Esther Alfaro,
+									Secretario Académico Ing. Julio Tentor, Secretaria de Ciencia y
+									Técnica Dra. Julia Santapaola, Secretaria de Extensión
+									Coordinación y Planificación Esp. Ing. Margarita Ivanovich, y
+									el Secretario Administrativo Mg. Ing. Ángel Fabián Castillo. El
+									encuentro se realizó junto a familiares de fundadores de la
+									Universidad Provincial, Ex Decanos, familiares de Ex Decanos,
+									estudiantes, docentes, ex docentes, no docentes,
+									investigadores, egresados y egresadas.</p>
+
+								<img class="img-fluid w-50 float-left mr-4 mb-2"
+									src="../static/images/salon-13.jpg"
+									alt="La jornada de celebración contó con la presencia del Rector de la Universidad Nacional de Jujuy Mg. Ing. Mario Bonillo" >
+								<p>La jornada de celebración contó con la presencia del
+									Rector de la Universidad Nacional de Jujuy Mg. Ing. Mario
+									Bonillo, Vice Rectora Dra. Liliana Bergesio, Decano de la
+									Facultad de Ciencias Económicas de la UNJu, CPN Javier
+									Martínez, Decana de la Facultad de Ciencias Agrarias de la UNJu
+									Dra. Noemí Bejarano, Decano de la Facultad de Humanidades y
+									Ciencias Sociales de la UNJu, Dr. Julio César Arrueta, Director
+									de la Escuela de Minas “Dr. Horacio Carrillo” Lic. Ferando
+									Sueiro y Sueiro, y Secretaria de Ciencia y Técnica y Estudios
+									Regionales de la UNJu Mg. Ing. Sandra Giunta.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-lg-4 pt-3 pt-lg-0">
+					<!-- redes sociales -->
+					<div class="pb-3">
+						<div class="bg-light py-2 px-4 mb-3">
+							<h3 class="m-0">Redes Sociales</h3>
+						</div>
+						<div class="d-flex mb-3">
+							<a href="https://www.facebook.com/fiunju/"
+								class="d-block w-50 py-2 px-3 text-white text-decoration-none mr-2 colorFaceb" target="_blank">
+								<small class="fab fa-facebook-f mr-2"></small><small>12,345
+									Fans</small>
+							</a> <a href="https://www.youtube.com/channel/UCgS9XJlKKSYI1oJ4lIOo77A"
+								class="d-block w-50 py-2 px-3 text-white text-decoration-none ml-2 colorYoutube" target="_blank">
+								<small class="fab fa-youtube mr-2"></small><small>12,345
+									Followers</small>
+							</a>
+						</div>
+						<div class="d-flex mb-3">
+							<a href="https://www.linkedin.com/school/facultad-de-ingenieria-unju/"
+								class="d-block w-50 py-2 px-3 text-white text-decoration-none mr-2 colorLinkedin" target="_blank">
+								<small class="fab fa-linkedin-in mr-2"></small><small>12,345
+									Connects</small>
+							</a> <a href="https://www.instagram.com/fiunju/"
+								class="d-block w-50 py-2 px-3 text-white text-decoration-none ml-2 colorInstag" target="_blank">
+								<small class="fab fa-instagram mr-2"></small><small>12,345
+									Followers</small>
+							</a>
+						</div>
+					</div>
+					<!-- fin redes sociales -->
+
+					<!-- links utiles -->
+					<div class="pb-3">
+						<div class="bg-light py-2 px-4 mb-3">
+							<h3 class="m-0">Links Útiles</h3>
+						</div>
+						<div class="d-flex mb-3">
+							<img src="../static/images/sied-unju-mono-circulo32.png"
+								class="imgBox"
+								alt="Logo unju virtual" >
+							<div
+								class="w-100 d-flex flex-column justify-content-center bg-light px-3 heightBox">
+								<a class="h6 m-0" href="https://virtual.unju.edu.ar/" target="_blank">Ingrese a la plataforma Unju
+									Virtual</a>
+							</div>
+						</div>
+						<div class="d-flex mb-3">
+							<img src="../static/images/pngegg.png"
+								class="imgBox"
+								alt="logo de calendario" >
+							<div
+								class="w-100 d-flex flex-column justify-content-center bg-light px-3 heightBox">
+								<a class="h6 m-0" href="https://www.fi.unju.edu.ar/secretarias/sec-academica/calendario-academico.html" target="_blank">Ingreso a Calendario Académico</a>
+							</div>
+						</div>
+						<div class="d-flex mb-3">
+							<img src="../static/images/library.svg"
+								class="imgBox"
+								alt="logo de libros" >
+							<div
+								class="w-100 d-flex flex-column justify-content-center bg-light px-3 heightBox">
+								<a class="h6 m-0" href="https://www.fi.unju.edu.ar/servicios/biblioteca.html" target="_blank">Ingreso a Biblioteca</a>
+							</div>
+						</div>
+						<div class="d-flex mb-3">
+							<img src="../static/images/siu.png"
+								class="imgBox"
+								alt="logo Siu Guarani" >
+							<div
+								class="w-100 d-flex flex-column justify-content-center bg-light px-3 heightBox">
+								<a class="h6 m-0" href="https://alumnos.unju.edu.ar/unju/" target="_blank">Ingreso a Siu Guarani</a>
+							</div>
+						</div>
+						<div class="d-flex mb-3">
+							<img src="../static/images/student.svg"
+								class="imgBox"
+								alt="dibujo de estudiante" >
+							<div
+								class="w-100 d-flex flex-column justify-content-center bg-light px-3 heightBox">
+								<a class="h6 m-0" href="https://www.fi.unju.edu.ar/ingreso-facultad-ingenieria.html" target="_blank">Ingresantes 2025</a>
+							</div>
+						</div>
+					</div>
+					<!-- fin links utiles -->
+				</div>
+			</div>
+		</div>
+	</main>
+
+	<!--   noticias   -->
+	<div class="container-fluid py-3" id="noticias">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8">
+					<div class="row mb-3">
+						<div class="col-12">
+							<div
+								class="d-flex align-items-center justify-content-between bg-light py-2 px-4 mb-3">
+								<h3 class="m-0">Noticias</h3>
+							</div>
+						</div>
+						<div class="col-lg-6">
+							<div class="position-relative mb-3">
+								<img class="img-fluid w-100 objectFitCover"
+									src="../static/images/Curso-posgrado-Derecho-inteligencia-artificial.png"
+									alt="Curso de postgrado, derecho en inteligencia Artificial" >
+								<div class="overlay position-relative bg-light">
+									<div class="mb-2 fontSize14">
+										<a href="">Technology</a> <span class="px-1">/</span> <span>29 de mayo, 2024</span>
+									</div>
+									<a class="h4" href="">Curso de posgrado: "Derecho e
+										Inteligencia Artificial"</a>
+								</div>
+							</div>
+							<div class="d-flex mb-3">
+								<img src="../static/images/Curso-Posgrado-Fisicoquimica.jpg" alt="Curso postgrado en Fisicoquimica" class="imgBox">
+								<div
+									class="w-100 d-flex flex-column justify-content-center bg-light px-3 heightBox">
+									<div class="mb-1 fontSize13">
+										<a href="">Curso</a> <span class="px-1">/</span> <span>29 de mayo, 2024</span>
+									</div>
+									<a class="h6 m-0" href="">Curso de postgrado en Fisicoquimica</a>
+								</div>
+							</div>
+							<div class="d-flex mb-3">
+								<img src="../static/images/vacunacion-unju-2024.jpg"
+									class="imgBox"
+									alt="campaña de vacunación unju 2024" />
+								<div
+									class="w-100 d-flex flex-column justify-content-center bg-light px-3 heightBox">
+									<div class="mb-1 fontSize13">
+										<a href="">Info</a> <span class="px-1">/</span> <span>29
+											mayo, 2024</span>
+									</div>
+									<a class="h6 m-0" href="">Campaña de vacunación</a>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-6">
+							<div class="position-relative mb-3">
+								<img class="img-fluid w-100"
+									src="../static/images/cadi-caedi.png" style="object-fit: cover"
+									alt="reunion informativa cadi-caedi" />
+								<div class="overlay position-relative bg-light">
+									<div class="mb-2 fontSize14">
+										<a href="">Info</a> <span class="px-1">/</span> <span>29 de mayo, 2024</span>
+									</div>
+									<a class="h4" href="">CADI - CAEDI | Reunión Informativa
+										IngeniaVoz 24/05 16:30hs</a>
+									<p class="m-0">El Comité Organizador del CADI-CAEDI 2024
+										invita a los/as estudiantes a la convocatoria de la propuesta
+										“IngeniaVoz”...</p>
+								</div>
+							</div>
+							<div class="d-flex mb-3">
+								<img src="../static/images/presentacion-libro-dr-galli.jpg"
+									class="imgBox"
+									alt="Presentacion del libro del doctor Galli" />
+								<div
+									class="w-100 d-flex flex-column justify-content-center bg-light px-3 heightBox">
+									<div class="mb-1 fontSize13">
+										<a href="">Info</a> <span class="px-1">/</span> <span>29 de mayo, 2024</span>
+									</div>
+									<a class="h6 m-0" href="">Presentación del libro...</a>
+								</div>
+							</div>
+							<div class="d-flex mb-3">
+								<img src="../static/images/Curso-Posgrado-Fisicoquimica.jpg"
+									class="imgBox"
+									alt="curso de pstgrado en fisicoquimica" />
+								<div
+									class="w-100 d-flex flex-column justify-content-center bg-light px-3 heightBox">
+									<div class="mb-1 fontSize13">
+										<a href="">Info</a> <span class="px-1">/</span> <span>29 de mayo, 2024</span>
+									</div>
+									<a class="h6 m-0" href="">Curso de Postgrado...</a>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- formulario -->
+					<div class="bg-light mb-3" id="formulario">
+						<h3 class="mb-4">Déjenos un comentario</h3>
+						<form>
+							<div class="form-group">
+								<label for="name">Nombre *</label> <input type="text"
+									class="form-control" id="name" />
+							</div>
+
+							<div class="form-group">
+								<label for="name">Apellido *</label> <input type="text"
+									class="form-control" id="lastname" />
+							</div>
+
+							<div class="form-group">
+								<label for="email">Email *</label> <input type="email"
+									class="form-control" id="email" />
+							</div>
+
+							<div class="form-group">
+								<label for="message">Mensaje *</label>
+								<textarea id="message" cols="30" rows="5" class="form-control"></textarea>
+							</div>
+							<div class="form-group mb-0">
+								<input type="submit" value="Enviar Comentario"
+									class="btn btn-primary font-weight-semi-bold py-2 px-3" />
+							</div>
+						</form>
+					</div>
+					<!-- fin formulario -->
+				</div>
+
+				<div class="col-lg-4 pt-3 pt-lg-0">
+					<!-- Newsletter -->
+					<div class="pb-3">
+						<div class="bg-light py-2 px-4 mb-3">
+							<h3 class="m-0">Newsletter</h3>
+						</div>
+						<div class="bg-light text-center p-4 mb-3">
+							<p>Suscribase a nuestro Newsletter para recibir información
+								acerca de la universidad!</p>
+							<div class="input-group" style="width: 100%">
+								<input type="text" class="form-control form-control-lg"
+									placeholder="Ingrese su Email" />
+								<div class="input-group-append">
+									<button class="btn btn-primary">Suscribirse</button>
+								</div>
+							</div>
+							<small>No es necesario registrarse</small>
+						</div>
+					</div>
+					<!-- fin Newsletter -->
+
+					<!-- Tags -->
+					<div class="pb-3">
+						<div class="bg-light py-2 px-4 mb-3">
+							<h3 class="m-0">Tags</h3>
+						</div>
+						<div class="d-flex flex-wrap m-n1">
+							<a href="" class="btn btn-sm btn-outline-secondary m-1">Unju</a>
+							<a href="" class="btn btn-sm btn-outline-secondary m-1">Ingenieria</a>
+							<a href="" class="btn btn-sm btn-outline-secondary m-1">Sistema</a>
+							<a href="" class="btn btn-sm btn-outline-secondary m-1">Cursos</a>
+							<a href="" class="btn btn-sm btn-outline-secondary m-1">2025</a>
+							<a href="" class="btn btn-sm btn-outline-secondary m-1">Jujuy</a>
+							<a href="" class="btn btn-sm btn-outline-secondary m-1">Geologia</a>
+							<a href="" class="btn btn-sm btn-outline-secondary m-1">Alimentos</a>
+							<a href="" class="btn btn-sm btn-outline-secondary m-1">Industrial</a>
+							<a href="" class="btn btn-sm btn-outline-secondary m-1">Fechas</a>
+							<a href="" class="btn btn-sm btn-outline-secondary m-1">Aniversario</a>
+							<a href="" class="btn btn-sm btn-outline-secondary m-1">Apu</a>
+						</div>
+					</div>
+					<!-- fin Tags -->
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- footer-->
+
+	<footer class="footer">
+		<div class="container">
+			<div class="row">
+				<!-- Información de contacto -->
+				<div class="col-md-4">
+					<h5>Contacto</h5>
+					<p>Dirección: Ítalo Palanca N°10</p>
+					<p>San Salvador de Jujuy - Jujuy - Argentina</p>
+					<p>Teléfono: 0388 422-1580</p>
+					<p>
+						Correo electrónico: <a href="mailto:info@fi.unju.edu.ar">info@fi.unju.edu.ar</a>
+					</p>
+				</div>
+				<!-- Enlaces a redes sociales -->
+				<div class="col-md-4">
+					<h5>Redes Sociales</h5>
+					<div class="social-icons">
+						<a href="https://www.facebook.com/fiunju/" aria-label="Facebook" target="_blank"><i class="fab fa-facebook"></i></a>
+						<a href="https://www.youtube.com/channel/UCgS9XJlKKSYI1oJ4lIOo77A" aria-label="Youtube" target="_blank"><i class="fab fa-youtube"></i></a>
+						<a href="https://www.instagram.com/fiunju/" aria-label="Instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+						<a href="https://www.linkedin.com/school/facultad-de-ingenieria-unju/" aria-label="LinkedIn" target="_blank"><i class="fab fa-linkedin"></i></a>
+					</div>
+				</div>
+				<!-- Derechos de autor -->
+				<div class="col-md-4 text-md-right">
+					<h5>Derechos de Autor</h5>
+					<p>&copy; 2024 Facultad de Ciencias. Todos los derechos
+						reservados.</p>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+	<!-- fin footer -->
+
+	<script src="https://kit.fontawesome.com/7c3ba39139.js"
+		crossorigin="anonymous"></script>
+
+	<!-- dejo comentado el javascript que no funciona -->
+	<!-- <script type="text/javascript" th:src="@{/webjars/bootstrap/js/bootstrap.bundle.min.js}"></script> -->
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+		crossorigin="anonymous"></script>
+	<script
+		src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+		integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+		crossorigin="anonymous"></script>
+
+
+</body>
+</html>
