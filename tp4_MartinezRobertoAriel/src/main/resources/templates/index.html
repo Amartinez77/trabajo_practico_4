@@ -1,19 +1,27 @@
 <!DOCTYPE html>
+<!--  
 <html xmlns:th="http://www.thymeleaf.org" lang="es">
+-->
+
+<html lang="es">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Inicio</title>
 
 
-<!-- dejo comentado el la dependencia de bootstrap que no funciona -->
+<!-- dejo comentado la dependencia de bootstrap que no funciona -->
 
 <!--  
 <link th:rel="stylesheet" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}">
 -->
-  
+
+<link rel="stylesheet" data-th-href="@{/webjars/bootstrap/css/bootstrap.min.css}">
+
+<!--    
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
-	
+-->
+
 <!--  estilos propios -->	
 
 <link rel="stylesheet" th:href="@{/css/estilos.css}">
@@ -499,6 +507,10 @@
 
 	<!-- dejo comentado el javascript que no funciona -->
 	<!-- <script type="text/javascript" th:src="@{/webjars/bootstrap/js/bootstrap.bundle.min.js}"></script> -->
+	
+	<script type="text/javascript" data-th-src="@{/webjars/bootstrap/js/bootstrap.bundle.min.js}"></script>
+	
+	<!-- 
 	<script
 		src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
 		integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
@@ -507,7 +519,7 @@
 		src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
 		integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
 		crossorigin="anonymous"></script>
-
+	 -->
 
 </body>
 </html>
