@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head data-th-replace="~{/layouts/head :: head}">
+
+</head>
+<body>
+	
+	 <!-- header -->
+    <header th:fragment="header" class="container-fluid">
+        <div class="row">
+            <div class="col-lg-8">
+                <div>
+                    <img th:src="@{/images/fiLogo.png}" alt="logo facultad">
+                </div>
+                <div>
+                    <p>"Flammam tuam in hoc foco accende"</p>
+                </div>
+            </div>
+            <div class="col-lg-4 d-flex justify-content-center align-items-center">
+                <p class="fs-2 fw-semibold">Universidad Nacional de Jujuy</p>
+            </div>
+        </div>
+        <!-- navbar -->
+        <nav class="navbar navbar-expand-lg bg-light mt-3">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                    <img th:src="@{/images/logoInstitucional285159.jpg}" alt="Logo" class="imgLogo">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="#inicio">Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#carreras">Carreras</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#noticias">Noticias</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#formulario">Contacto</a></li>
+                    </ul>
+                    <form class="d-flex" role="search">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-primary" type="submit">Search</button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!-- fin header -->
+	
+
+</body>
+</html>
