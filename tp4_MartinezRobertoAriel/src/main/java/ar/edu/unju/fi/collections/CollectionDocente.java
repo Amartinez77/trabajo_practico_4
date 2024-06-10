@@ -1,12 +1,13 @@
 package ar.edu.unju.fi.collections;
 
 import java.util.ArrayList;
-import java.util.Iterator;
+
 import java.util.List;
 import java.util.Optional;
 import java.util.function.Predicate;
 
 import org.springframework.stereotype.Component;
+
 
 import ar.edu.unju.fi.model.Docente;
 
@@ -15,7 +16,7 @@ import ar.edu.unju.fi.model.Docente;
 public class CollectionDocente {
 	
 	
-	private static List<Docente> docentes = new ArrayList<>();
+	private static List<Docente> docentes = new ArrayList<Docente>();
 	
 	
 	/**
@@ -69,32 +70,24 @@ public class CollectionDocente {
 	 */
 	
 	public static void modificarDocente(Docente docente) {
-		
-		for (Docente doc : docentes) {
-			
-			if (doc.getLegajo()==docente.getLegajo()) {
-				
-				doc.setNombre(docente.getNombre());
-				doc.setApellido(docente.getApellido());
-				doc.setEmail(docente.getEmail());
-				doc.setTelefono(docente.getTelefono());
-				
-				
-			}
-			
-		}
-		
-	}
+        for (Docente doc : docentes) {
+            if (doc.getLegajo().equals(docente.getLegajo())) {
+                doc.setNombre(docente.getNombre());
+                doc.setApellido(docente.getApellido());
+                doc.setEmail(docente.getEmail());
+                doc.setTelefono(docente.getTelefono());
+            }
+        }
+    }
 	
 	
 	public static Docente buscarDocente(Integer legajo) {
-		
-		Predicate<Docente> filterDocente = doc -> doc.getLegajo() == legajo;
-		
-		Optional<Docente> docente = docentes.stream().filter(filterDocente).findFirst();
-		
-		return docente.orElse(null);
-		
+	    Predicate<Docente> filterDocente = doc -> doc.getLegajo().equals(legajo);
+
+	    Optional<Docente> docente = docentes.stream().filter(filterDocente).findFirst();
+
+	    return docente.orElse(null);
 	}
+
 
 }
