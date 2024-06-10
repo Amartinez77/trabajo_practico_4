@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-th-text="${titulo}"></title>
+    <link rel="stylesheet" data-th-href="@{/webjars/bootstrap/css/bootstrap.min.css}">
+    <!--  estilos propios -->	
+
+	<link rel="stylesheet" data-th-href="@{/css/estilos.css}">
+
+</head>
+<body>
+    <div class="container">
+        <h1 th:text="${titulo}"></h1>
+        <a href="/alumno/nuevo" class="btn btn-primary mb-3">Nuevo Alumno</a>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>DNI</th>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Email</th>
+                    <th>Fecha de Nacimiento</th>
+                    <th>Domicilio</th>
+                    <th>LU</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="alumno : ${alumnos}">
+                    <td th:text="${alumno.dni}"></td>
+                    <td th:text="${alumno.nombre}"></td>
+                    <td th:text="${alumno.apellido}"></td>
+                    <td th:text="${alumno.email}"></td>
+                    <td th:text="${alumno.fechaNacimiento}"></td>
+                    <td th:text="${alumno.domicilio}"></td>
+                    <td th:text="${alumno.lu}"></td>
+                    <td>
+                        <a th:href="@{/alumno/modificar/{dni}(dni=${alumno.dni})}" class="btn btn-warning">Modificar</a>
+                        <a th:href="@{/alumno/eliminar/{dni}(dni=${alumno.dni})}" class="btn btn-danger">Eliminar</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <script type="text/javascript" data-th-src="@{/webjars/bootstrap/js/bootstrap.bundle.min.js}"></script>
+</body>
+</html>

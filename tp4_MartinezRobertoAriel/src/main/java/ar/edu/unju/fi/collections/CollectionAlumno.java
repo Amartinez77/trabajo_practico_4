@@ -63,7 +63,7 @@ public class CollectionAlumno {
 		
 		while (iterator.hasNext()) {
 			
-			if(iterator.next().getDni() == dni) {
+			if(iterator.next().getDni().equals(dni)) {
 				
 				iterator.remove();				
 				
@@ -84,7 +84,7 @@ public class CollectionAlumno {
 		
 		for (Alumno alu : alumnos ) {
 			
-			if(alu.getDni()==alumno.getDni()) {
+			if(alu.getDni().equals(alumno.getDni())) {
 				
 				alu.setNombre(alumno.getNombre());
 				alu.setApellido(alumno.getApellido());
@@ -117,7 +117,7 @@ public class CollectionAlumno {
 	
 	public static Alumno buscarAlumno(String dni) {
 		
-		Predicate<Alumno> filterAlumno = c -> c.getDni() == dni;
+		Predicate<Alumno> filterAlumno = c -> c.getDni().equals(dni);
 		Optional<Alumno> alumno = alumnos.stream().filter(filterAlumno).findFirst();
 		
 		if (alumno.isPresent()) {

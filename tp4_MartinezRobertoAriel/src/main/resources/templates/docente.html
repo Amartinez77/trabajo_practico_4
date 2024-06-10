@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-th-text="${titulo}"></title>
+    <link rel="stylesheet" data-th-href="@{/webjars/bootstrap/css/bootstrap.min.css}">
+    <!--  estilos propios -->	
+
+	<link rel="stylesheet" data-th-href="@{/css/estilos.css}">
+</head>
+<body>
+    <div class="container">
+        <h1 th:text="${titulo}"></h1>
+        <form th:action="@{${edicion} ? '/docente/modificar' : '/docente/guardar'}" th:object="${docente}" method="post">
+            <div class="mb-3">
+                <label for="legajo" class="form-label">Legajo</label>
+                <input type="text" class="form-control" id="legajo" th:field="*{legajo}" readonly="readonly">
+            </div>
+            <div class="mb-3">
+                <label for="nombre" class="form-label">Nombre</label>
+                <input type="text" class="form-control" id="nombre" th:field="*{nombre}">
+            </div>
+            <div class="mb-3">
+                <label for="apellido" class="form-label">Apellido</label>
+                <input type="text" class="form-control" id="apellido" th:field="*{apellido}">
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" th:field="*{email}">
+            </div>
+            <div class="mb-3">
+                <label for="telefono" class="form-label">Teléfono</label>
+                <input type="text" class="form-control" id="telefono" th:field="*{telefono}">
+            </div>
+            <button type="submit" class="btn btn-primary">Guardar</button>
+        </form>
+    </div>
+    <script type="text/javascript" data-th-src="@{/webjars/bootstrap/js/bootstrap.bundle.min.js}"></script>
+</body>
+</html>

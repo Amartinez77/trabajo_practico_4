@@ -54,7 +54,7 @@ public class CollectionMateria {
 		
 		while (iterator.hasNext()) {
 			
-			if (iterator.next().getCodigo() == codigo) {
+			if (iterator.next().getCodigo().equals(codigo)) {
 				
 				iterator.remove();
 				
@@ -75,7 +75,7 @@ public class CollectionMateria {
 		
 		for(Materia mat : materias) {
 			
-			if (mat.getCodigo() == materia.getCodigo()) {
+			if (mat.getCodigo().equals(materia.getCodigo())) {
 				
 				mat.setNombre(materia.getNombre());
 				mat.setCurso(materia.getCurso());
@@ -100,7 +100,7 @@ public class CollectionMateria {
 	
 	public static Materia buscarMateria(String codigo) {
 		
-		Predicate<Materia> filterMateria = c -> c.getCodigo() == codigo;
+		Predicate<Materia> filterMateria = c -> c.getCodigo().equals(codigo);
 		
 		Optional<Materia> materia = materias.stream().filter(filterMateria).findFirst();
 		
