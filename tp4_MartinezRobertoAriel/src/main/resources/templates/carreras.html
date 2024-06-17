@@ -1,10 +1,46 @@
 <!DOCTYPE html>
-<html>
+<html lang="es" xmlns:th="https://www.thymeleaf.org">
 <head>
-<meta charset="ISO-8859-1">
-<title>Insert title here</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-th-text="${titulo}"></title>
+    <link rel="stylesheet" data-th-href="@{/webjars/bootstrap/css/bootstrap.min.css}">
+    <!--  estilos propios -->	
+
+	<link rel="stylesheet" data-th-href="@{/css/estilos.css}">
+
 </head>
 <body>
+    <div class="container">
+        <h1 th:text="${titulo}"></h1>
+        <a href="/carrera/nuevo" class="btn btn-primary mb-3">Nuevo Carrera</a>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>CODIGO</th>
+                    <th>Nombre</th>
+                    <th>DURACION (años)</th>
+                    <th>ESTADO</th>
 
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="carrera : ${carreras}">
+                    <td th:text="${carrera.codigo}"></td>
+                    <td th:text="${carrera.nombre}"></td>
+                    <td th:text="${carrera.cantAnios}"></td>
+					<td>
+						<span th:if="${carrera.estado}" class="bg-success rounded-5 px-2 py-1 text-white fw-semibold">Activa</span>
+                        <span th:unless="${carrera.estado}" class="bg-danger rounded-5 px-2 py-1 text-white fw-semibold">Inactiva</span>
+                    <td>
+                        <a th:href="@{/carrera/modificar/{codigo}(codigo=${carrera.codigo})}" class="btn btn-warning">Modificar</a>
+                        <a th:href="@{/carrera/eliminar/{codigo}(codigo=${carrera.codigo})}" class="btn btn-danger">Eliminar</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <script type="text/javascript" data-th-src="@{/webjars/bootstrap/js/bootstrap.bundle.min.js}"></script>
 </body>
 </html>
