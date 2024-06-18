@@ -59,6 +59,21 @@ public class MateriaController {
     
     */
     
+    /**
+     * Maneja la solicitud POST para guardar una nueva materia.
+     * 
+     * Este método recibe los datos de una nueva materia desde el formulario y procesa
+     * los identificadores del docente y la carrera seleccionados. Luego, busca las
+     * instancias correspondientes de Docente y Carrera y las asigna a la materia.
+     * Finalmente, agrega la materia a la colección de materias y retorna la vista
+     * actualizada con el listado de materias.
+     * 
+     * @param materia El objeto Materia que se va a guardar.
+     * @param docenteId El identificador del docente seleccionado en el formulario.
+     * @param carreraId El identificador de la carrera seleccionada en el formulario.
+     * @return Un objeto ModelAndView que contiene la vista "materias" y la lista de todas las materias.
+     */
+    
     @PostMapping("/guardar")
     public ModelAndView postGuardarMateria(@ModelAttribute("materia") Materia materia, @RequestParam("docenteId") Integer docenteId, @RequestParam("carreraId") Integer carreraId) {
         ModelAndView modelView = new ModelAndView("materias");
@@ -101,6 +116,21 @@ public class MateriaController {
     
     */
     
+    
+    /**
+     * Maneja la solicitud POST para modificar una materia existente.
+     * 
+     * Este método recibe los datos actualizados de una materia desde el formulario y 
+     * procesa los identificadores del docente y la carrera seleccionados. Luego, busca 
+     * las instancias correspondientes de Docente y Carrera y las asigna a la materia.
+     * Finalmente, actualiza la materia en la colección de materias y redirige al usuario
+     * a la página de listado de materias.
+     * 
+     * @param materia El objeto Materia que se va a modificar.
+     * @param docenteId El identificador del docente seleccionado en el formulario.
+     * @param carreraId El identificador de la carrera seleccionada en el formulario.
+     * @return Una cadena que redirige a la página de listado de materias.
+     */
     
     @PostMapping("/modificar")
     public String modificarMateria(@ModelAttribute("materia") Materia materia, @RequestParam("docenteId") Integer docenteId, @RequestParam("carreraId") Integer carreraId) {
