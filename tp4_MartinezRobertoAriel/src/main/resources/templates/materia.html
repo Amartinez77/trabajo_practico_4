@@ -10,7 +10,11 @@
 	<link rel="stylesheet" data-th-href="@{/css/estilos.css}">
 </head>
 <body>
-    <div class="container">
+
+	<!-- Se agrega fragmento header -->
+	<header data-th-replace="~{/layouts/header :: header}"></header>
+
+    <div class="container mt-2">
         <h1 th:text="${titulo}"></h1>
         <form th:action="@{${edicion} ? '/materia/modificar' : '/materia/guardar'}" th:object="${materia}" method="post">
             <div class="mb-3">
@@ -34,16 +38,26 @@
                 <input type="text" class="form-control" id="modalidad" th:field="*{modalidad}">
             </div>
             <div class="mb-3">
-                <label for="docente" class="form-label">Docente</label>
-                <input type="text" class="form-control" id="docente" th:field="*{docente.nombre}">
-            </div>
-            <div class="mb-3">
-                <label for="carrera" class="form-label">Carrera</label>
-                <input type="text" class="form-control" id="carrera" th:field="*{carrera.nombre}">
-            </div>
+			    <label for="docente" class="form-label">Docente</label>
+			    <select class="form-control" id="docente" name="docenteId">
+			        <option value="" disabled selected>Seleccione un docente</option>
+			        <option th:each="docente : ${docentes}" th:value="${docente.legajo}" th:text="${docente.nombre}"></option>
+			    </select>
+			</div>
+			<div class="mb-3">
+			    <label for="carrera" class="form-label">Carrera</label>
+			    <select class="form-control" id="carrera" name="carreraId">
+			        <option value="" disabled selected>Seleccione una carrera</option>
+			        <option th:each="carrera : ${carreras}" th:value="${carrera.codigo}" th:text="${carrera.nombre}"></option>
+			    </select>
+			</div>
             <button type="submit" class="btn btn-primary">Guardar</button>
         </form>
     </div>
+    
+    <!--   fragmento footer -->
+    <footer data-th-replace="~{/layouts/footer :: footer}"></footer>
+    
     <script type="text/javascript" data-th-src="@{/webjars/bootstrap/js/bootstrap.bundle.min.js}"></script>
 </body>
 </html>

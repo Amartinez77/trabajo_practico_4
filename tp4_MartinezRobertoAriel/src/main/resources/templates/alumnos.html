@@ -11,7 +11,11 @@
 
 </head>
 <body>
-    <div class="container">
+	
+	<!-- Se agrega fragmento header -->
+	<header data-th-replace="~{/layouts/header :: header}"></header>
+	
+    <div class="container flex-fill mt-2">
         <h1 th:text="${titulo}"></h1>
         <a href="/alumno/nuevo" class="btn btn-primary mb-3">Nuevo Alumno</a>
         <table class="table">
@@ -44,6 +48,10 @@
             </tbody>
         </table>
     </div>
+    
+    <!--   fragmento footer -->
+    <footer data-th-replace="~{/layouts/footer :: footer}"></footer>
+    
     <script type="text/javascript" data-th-src="@{/webjars/bootstrap/js/bootstrap.bundle.min.js}"></script>
 </body>
 </html>
