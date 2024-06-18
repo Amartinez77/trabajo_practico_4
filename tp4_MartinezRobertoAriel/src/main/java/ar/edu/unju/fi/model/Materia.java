@@ -101,6 +101,13 @@ public class Materia {
 	public void setCarrera(Carrera carrera) {
 		this.carrera = carrera;
 	}
+
+
+	@Override
+	public String toString() {
+		return "Materia [codigo=" + codigo + ", nombre=" + nombre + ", curso=" + curso + ", cantHoras=" + cantHoras
+				+ ", modalidad=" + modalidad + ", docente=" + docente + ", carrera=" + carrera + "]";
+	}
 	
 	
 	

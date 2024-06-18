@@ -13,7 +13,11 @@
 	
 </head>
 <body>
-    <div class="container">
+
+	<!-- Se agrega fragmento header -->
+	<header data-th-replace="~{/layouts/header :: header}"></header>
+
+    <div class="container mt-2">
         <h1 th:text="${titulo}"></h1>
         <form th:action="@{${edicion} ? '/carrera/modificar' : '/carrera/guardar'}" th:object="${carrera}" method="post">
             <div class="mb-3">
@@ -47,6 +51,10 @@
             <button type="submit" class="btn btn-primary">Guardar</button>
         </form>
     </div>
+    
+     <!--   fragmento footer -->
+    <footer data-th-replace="~{/layouts/footer :: footer}"></footer>
+    
     <script type="text/javascript" data-th-src="@{/webjars/bootstrap/js/bootstrap.bundle.min.js}"></script>
 </body>
 </html>

@@ -9,6 +9,12 @@ import org.springframework.ui.Model;
 
 @Controller
 
+
+
+/**
+ * controlador principal
+ */
+
 public class MainController {
 
 	@GetMapping("/inicio")
@@ -16,13 +22,6 @@ public class MainController {
 		model.addAttribute("titulo", "hola");
 		return "index";
 	}
-	
-	
-	@GetMapping("/alta")
-	public String getAltaPage() {
-		return "alta";
-	}
-	
 	
 	
 }
