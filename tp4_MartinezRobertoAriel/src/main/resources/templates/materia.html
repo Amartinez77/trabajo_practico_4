@@ -39,17 +39,17 @@
             </div>
             <div class="mb-3">
 			    <label for="docente" class="form-label">Docente</label>
-			    <select class="form-control" id="docente" name="docenteLegajo">
-			        <option value="" disabled selected>Seleccione un docente</option>
-			        <option th:each="docente : ${docentes}" th:value="${docente.legajo}" th:text="${docente.nombre}"></option>
-			    </select>
+                <select class="form-control" id="docente" name="docenteLegajo" required>
+                    <option value="" disabled th:selected="${materia.docente == null}">Seleccione un docente</option>
+                    <option th:each="docente : ${docentes}" th:value="${docente.legajo}" th:text="${docente.nombre}" th:selected="${materia.docente != null and materia.docente.legajo == docente.legajo}"></option>
+                </select>
 			</div>
 			<div class="mb-3">
 			    <label for="carrera" class="form-label">Carrera</label>
-			    <select class="form-control" id="carrera" name="carreraCodigo">
-			        <option value="" disabled selected>Seleccione una carrera</option>
-			        <option th:each="carrera : ${carreras}" th:value="${carrera.codigo}" th:text="${carrera.nombre}"></option>
-			    </select>
+                <select class="form-control" id="carrera" name="carreraCodigo" required>
+                    <option value="" disabled th:selected="${materia.carrera == null}">Seleccione una carrera</option>
+                    <option th:each="carrera : ${carreras}" th:value="${carrera.codigo}" th:text="${carrera.nombre}" th:selected="${materia.carrera != null and materia.carrera.codigo == carrera.codigo}"></option>
+                </select>
 			</div>
             <button type="submit" class="btn btn-primary">Guardar</button>
         </form>
