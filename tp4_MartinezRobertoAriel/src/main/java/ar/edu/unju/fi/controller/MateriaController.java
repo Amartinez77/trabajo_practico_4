@@ -48,16 +48,7 @@ public class MateriaController {
         return "materia";
     }
 
-    /* 
-    @PostMapping("/guardar")
-    public ModelAndView postGuardarMateria(@ModelAttribute("materia") Materia materia) {
-        ModelAndView modelView = new ModelAndView("materias");
-        CollectionMateria.agregarMateria(materia);
-        modelView.addObject("materias", CollectionMateria.getMaterias());
-        return modelView;
-    }
-    
-    */
+  
     
     /**
      * Maneja la solicitud POST para guardar una nueva materia.
@@ -75,12 +66,12 @@ public class MateriaController {
      */
     
     @PostMapping("/guardar")
-    public ModelAndView postGuardarMateria(@ModelAttribute("materia") Materia materia, @RequestParam("docenteId") Integer docenteId, @RequestParam("carreraId") Integer carreraId) {
+    public ModelAndView postGuardarMateria(@ModelAttribute("materia") Materia materia, @RequestParam("docenteLegajo") Integer docenteLegajo, @RequestParam("carreraCodigo") Integer carreraCodigo) {
         ModelAndView modelView = new ModelAndView("materias");
 
         // Busca el docente y la carrera usando los IDs
-        Docente docente = CollectionDocente.buscarDocente(docenteId);
-        Carrera carrera = CollectionCarrera.buscarCarrera(carreraId);
+        Docente docente = CollectionDocente.buscarDocente(docenteLegajo);
+        Carrera carrera = CollectionCarrera.buscarCarrera(carreraCodigo);
 
         // Asigna el docente y la carrera a la materia
         materia.setDocente(docente);
@@ -107,14 +98,7 @@ public class MateriaController {
         return "materia";
     }
 
-    /*
-    @PostMapping("/modificar")
-    public String modificarMateria(@ModelAttribute("materia") Materia materia) {
-        CollectionMateria.modificarMateria(materia);
-        return "redirect:/materia/listado";
-    }
-    
-    */
+
     
     
     /**
@@ -133,10 +117,14 @@ public class MateriaController {
      */
     
     @PostMapping("/modificar")
-    public String modificarMateria(@ModelAttribute("materia") Materia materia, @RequestParam("docenteId") Integer docenteId, @RequestParam("carreraId") Integer carreraId) {
+    public String modificarMateria(@ModelAttribute("materia") Materia materia, @RequestParam("docenteLegajo") Integer docenteLegajo, @RequestParam("carreraCodigo") Integer carreraCodigo) {
         // Busca el docente y la carrera usando los IDs
-        Docente docente = CollectionDocente.buscarDocente(docenteId);
-        Carrera carrera = CollectionCarrera.buscarCarrera(carreraId);
+    	
+    	System.out.println(docenteLegajo);
+    	System.out.println(carreraCodigo);
+    	
+        Docente docente = CollectionDocente.buscarDocente(docenteLegajo);
+        Carrera carrera = CollectionCarrera.buscarCarrera(carreraCodigo);
 
         // Asigna el docente y la carrera a la materia
         materia.setDocente(docente);
